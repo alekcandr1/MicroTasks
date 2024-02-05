@@ -1,6 +1,9 @@
 import { useState } from "react"
 import { Button } from "./Button"
 import { NewComponent } from "./NewComponent"
+import { UseState } from "./useState"
+import { Filter } from "./Filter"
+import { Filter2 } from "./Filter2"
 
 
 const students = [
@@ -37,17 +40,6 @@ export const Body = () => {
     //     console.log(num)
     // }
 
-    let [a, setA] = useState(1)
-
-    const onClickHandler = () => {
-        setA(++a)
-        console.log(a)
-    }
-    const onClickHandler2 = () => {
-        setA(a=0)
-        console.log(a)
-    }
-
     return (
         <main>
             <div>Main content</div>
@@ -62,10 +54,9 @@ export const Body = () => {
             {/* <Button name="One" callBack={foo1} /> 
             <Button name="Two" callBack={() => foo2(100200)} /> */}
 
-            <h1 id="h1">{a}</h1>
-            <button onClick={onClickHandler}>Number +1</button>
-            <button onClick={onClickHandler2}>0</button>
+            <UseState />
 
+            <Filter2 />
 
         </main>
     )
