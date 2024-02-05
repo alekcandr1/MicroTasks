@@ -1,3 +1,4 @@
+import { useState } from "react"
 import { Button } from "./Button"
 import { NewComponent } from "./NewComponent"
 
@@ -29,12 +30,24 @@ export const Body = () => {
     //     console.log(name)
     // }
 
-    const foo1 = () => {
-        console.log(100200)
+    // const foo1 = () => {
+    //     console.log(100200)
+    // }
+    // const foo2 = (num: number) => {
+    //     console.log(num)
+    // }
+
+    let [a, setA] = useState(1)
+
+    const onClickHandler = () => {
+        setA(++a)
+        console.log(a)
     }
-    const foo2 = (num: number) => {
-        console.log(num)
+    const onClickHandler2 = () => {
+        setA(a=0)
+        console.log(a)
     }
+
     return (
         <main>
             <div>Main content</div>
@@ -46,8 +59,14 @@ export const Body = () => {
             {/* <button onClick={foo1}>1</button>
             <button onClick={()=>foo2(100200)}>2</button> */}
 
-            <Button name="One" callBack={foo1} />
-            <Button name="Two" callBack={() => foo2(100200)} />
+            {/* <Button name="One" callBack={foo1} /> 
+            <Button name="Two" callBack={() => foo2(100200)} /> */}
+
+            <h1 id="h1">{a}</h1>
+            <button onClick={onClickHandler}>Number +1</button>
+            <button onClick={onClickHandler2}>0</button>
+
+
         </main>
     )
 }
