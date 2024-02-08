@@ -1,6 +1,6 @@
 import {useState} from "react"
 
-export const UseState = () => {
+export const UseStateTask = () => {
 
     let [a, setA] = useState(1)
 

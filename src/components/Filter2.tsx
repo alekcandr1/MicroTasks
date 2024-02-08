@@ -27,6 +27,7 @@ export const Filter2 = () => {
     
 
     return <div>
+        <h3>Filter</h3>
         <button onClick={()=>onClickHandler('ALL')}>ALL</button>
         <button onClick={()=>onClickHandler('USD')}>USD</button>
         <button onClick={()=>onClickHandler('BYN')}>BYN</button>
