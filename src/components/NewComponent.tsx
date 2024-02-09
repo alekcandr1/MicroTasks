@@ -21,7 +21,7 @@ export const NewComponent = (props: NewComponentPropsType) => {
     const renderCars = <ul>
         {
             props.cars.map((car, index) => {
-                return <li>
+                return <li key={index}>
                     {car.brand}
                 </li>
             })

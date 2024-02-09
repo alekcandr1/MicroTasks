@@ -5,6 +5,7 @@ import { UseStateTask } from './useStateTask'
 import { Filter } from './Filter'
 import { Filter2 } from './Filter2'
 import Messages from './Messages';
+import Devs from './Devs';
 
 const students = [
     {
@@ -66,6 +67,7 @@ export const Body = () => {
             <UseStateTask/>
             <Filter2/>
             <Messages messages={ messages } addMessage={ addMessage }/>
+            <Devs />
 
 
 
