@@ -1,5 +1,7 @@
 import React from 'react';
 
+type NothingType = {}
+
 type OnlyButtonType = {
     name: string
     callBack: () => void
