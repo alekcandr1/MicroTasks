@@ -49,8 +49,10 @@ export const Adidas = () => {
             <S.Gallery>
                 { adidasArr.map(( e, index ) => {
                     return (<div key={ index }>
-                        <NavLink to={ `/adidas/${ e.id }` }><img src={ e.picture }
-                                                                               alt={ e.model } /></NavLink>
+                        <NavLink to={ `/adidas/${ e.id }` }>
+                            <img src={ e.picture }
+                                 alt={ e.model } />
+                        </NavLink>
                     </div>)
                 }) }
 

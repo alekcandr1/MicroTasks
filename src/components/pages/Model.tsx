@@ -19,6 +19,7 @@ const allModels: allModelsType = {
 export const Model = ( props: ModelProps ) => {
 
     const {manufacturer, modelID} = useParams()
+
     console.log(manufacturer)
     console.log(modelID)
 
