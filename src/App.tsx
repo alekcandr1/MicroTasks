@@ -1,5 +1,5 @@
 import React from 'react';
-import {Navigate, NavLink, Route, Routes} from 'react-router-dom';
+import { Navigate, NavLink, Outlet, Route, Routes } from 'react-router-dom';
 import {Error404} from "./components/pages/Error404";
 import {Adidas} from "./components/pages/Adidas";
 import {Puma} from "./components/pages/Puma";
@@ -7,12 +7,14 @@ import {Abibas} from "./components/pages/Abibas";
 import styles from "./components/Site.module.css";
 import {S} from './components/pages/_styles';
 import { Model } from './components/pages/Model';
+import { Prices } from './components/pages/Prices';
 
 
 const PATH = {
     PAGE1: 'adidas',
     PAGE2: 'puma',
     PAGE3: 'abibas',
+    PAGE4: 'price',
 } as const;
 
 function App() {
@@ -24,20 +26,23 @@ function App() {
                     <S.NavWrapper><NavLink to={PATH.PAGE1}>Adidas</NavLink></S.NavWrapper>
                     <S.NavWrapper><NavLink to={PATH.PAGE2}>Puma</NavLink></S.NavWrapper>
                     <S.NavWrapper><NavLink to={PATH.PAGE3}>Abibas</NavLink></S.NavWrapper>
-                    {/*<a href="page3">page3 HTML</a>*/}
+                    <S.NavWrapper><NavLink to={PATH.PAGE4}>Цены опт</NavLink></S.NavWrapper>
                 </div>
                 <div className={styles.content}>
-                    <Routes>
-                        <Route path={'/'} element={<Navigate to={'/page1'}/>}/>
+                    <Outlet /s>
 
-                        <Route path={PATH.PAGE1} element={<Adidas/>}/>
-                        <Route path={PATH.PAGE2} element={<Puma/>}/>
-                        <Route path={PATH.PAGE3} element={<Abibas/>}/>
+                    {/*<Routes>*/}
+                    {/*    <Route path={'/'} element={<Navigate to={PATH.PAGE1}/>}/>*/}
 
-                        <Route path={'/:manufacturer/:modelID'} element={<Model />}/>
-                        <Route path={'/*'} element={<Error404/>}/>
+                    {/*    <Route path={PATH.PAGE1} element={<Adidas/>}/>*/}
+                    {/*    <Route path={PATH.PAGE2} element={<Puma/>}/>*/}
+                    {/*    <Route path={PATH.PAGE3} element={<Abibas/>}/>*/}
+                    {/*    <Route path={PATH.PAGE4} element={<Prices/>}/>*/}
 
-                    </Routes>
+                    {/*    <Route path={'/:manufacturer/:modelID'} element={<Model />}/>*/}
+                    {/*    <Route path={'/*'} element={<Error404/>}/>*/}
+
+                    {/*</Routes>*/}
                 </div>
             </div>
             <div className={styles.footer}>abibas 2023</div>
