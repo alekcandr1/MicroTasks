@@ -8,7 +8,6 @@ import { Abibas } from '../components/pages/Abibas';
 import { Prices } from '../components/pages/Prices';
 import { Model } from '../components/pages/Model';
 import { ProtectedPage } from '../components/pages/ProtectedPage';
-import { ProtectedRoute } from './ProtectedRoute';
 import { Login } from '../components/pages/Login';
 import { ReactElement } from 'react';
 
@@ -71,12 +70,16 @@ export const router = createBrowserRouter([
     {
         path: '/',
         element: <App />,
-        errorElement: <Navigate to={ 'error' } />,
+        errorElement: <Navigate to={ '/error' } />,
         children: [
             ...publicRoutes,
             {
                 element: <PrivateRoute />,
                 children: [...privateRoutes]
+            },
+            {
+                element: <Navigate to={ '/adidas' } />,
+                index: true
             }
         ]
     }
